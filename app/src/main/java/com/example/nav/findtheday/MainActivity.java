@@ -1,4 +1,4 @@
-package com.androidtutz.nav.findtheday;
+package com.example.nav.findtheday;
 
 import android.net.Uri;
 import android.os.Bundle;

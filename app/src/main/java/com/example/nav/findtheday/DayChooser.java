@@ -1,19 +1,12 @@
-package com.androidtutz.nav.findtheday;
+package com.example.nav.findtheday;
 
 /**
  * Created by K. A. ANUSHKA MADUSANKA on 1/26/2018.
  */
-
 public class DayChooser {
-    private int givenIndex;
     private String selectedDay;
-
     public String getTheDay(int index) {
-
-
         int reminder = index % 5;
-
-
         switch (reminder) {
             case 1:
                 selectedDay = "Monday";

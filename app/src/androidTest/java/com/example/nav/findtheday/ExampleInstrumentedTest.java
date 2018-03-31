@@ -1,4 +1,4 @@
-package com.androidtutz.nav.findtheday;
+package com.example.nav.findtheday;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".DayFragment">
-
     <TextView
         android:id="@+id/tvValue"
         android:layout_width="match_parent"
@@ -12,6 +11,4 @@
         android:textSize="35dp"
         android:padding="15dp"
         />
-
-
 </RelativeLayout>

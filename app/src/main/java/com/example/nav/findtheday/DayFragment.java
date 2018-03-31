@@ -1,5 +1,4 @@
-package com.androidtutz.nav.findtheday;
-
+package com.example.nav.findtheday;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
 
+import javax.inject.Inject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,25 +21,17 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class DayFragment extends DialogFragment {
+    @Inject
+    DayChooser dayChooser;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     private OnFragmentInteractionListener mListener;
-
     private int enteredNumber;
     private TextView textView;
-
     public DayFragment() {
         // Required empty public constructor
     }
-
-
     public static DayFragment newInstance(int index) {
         DayFragment fragment = new DayFragment();
         Bundle args = new Bundle();
@@ -47,10 +39,10 @@ public class DayFragment extends DialogFragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             enteredNumber = getArguments().getInt(ARG_PARAM1);
 
@@ -61,26 +53,14 @@ public class DayFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         View view = inflater.inflate(R.layout.fragment_day, container, false);
-        textView = (TextView) view.findViewById(R.id.tvValue);
-
-        DayChooser dayChooser = new DayChooser();
+        textView = view.findViewById(R.id.tvValue);
+        App.getApp().getDayChooserComponent().inject(this);
+        //DayChooser dayChooser = new DayChooser();   //replace by dagger
         String day = dayChooser.getTheDay(enteredNumber);
-
         textView.setText(day);
-
-
         return view;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
     }
 
     @Override
