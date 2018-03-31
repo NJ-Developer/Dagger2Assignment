@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.findtheday;
+package com.androidtutz.nav.findtheday;
 
 /**
  * Created by K. A. ANUSHKA MADUSANKA on 1/26/2018.

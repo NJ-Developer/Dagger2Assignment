@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.androidtutz.anushka.findtheday">
+    package="com.androidtutz.nav.findtheday">
 
     <application
         android:allowBackup="true"

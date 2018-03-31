@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.findtheday;
+package com.androidtutz.nav.findtheday;
 
 import org.junit.Test;
 
